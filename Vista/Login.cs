@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class Login : Form, IObservador
+    public partial class Login : Form
     {
         public Login()
         {

@@ -3,3 +3,4 @@ C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iter
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Modelo\bin\Debug\Modelo.pdb
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Modelo\obj\Debug\Modelo.dll
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache

@@ -7,3 +7,4 @@ C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iter
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.pdb
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Menu_Principal.resources
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.csprojResolveAssemblyReference.cache
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Lista_Servicios.resources

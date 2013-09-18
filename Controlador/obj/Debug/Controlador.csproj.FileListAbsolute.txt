@@ -8,3 +8,5 @@ C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iter
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Controlador\obj\Debug\Controlador.pdb
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Controlador\bin\Debug\Data.dll
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Controlador\bin\Debug\Data.pdb
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Controlador\bin\Debug\Modelo.dll
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Controlador\bin\Debug\Modelo.pdb

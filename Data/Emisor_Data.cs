@@ -11,7 +11,9 @@ namespace Data
     {
         private Emisor_Data() { }
 
-
+        /// <summary>
+        /// Uso de singleton con el parerametro de instance para el uso de un solo objeto
+        /// </summary>
         public static Emisor_Data getInstance
         {
             get
@@ -33,7 +35,7 @@ namespace Data
         /// </summary>
         /// <returns></returns>
         /// Returna false si algo fallo en el proceso en caso contrario true.
-        /*public bool Almacenar(Cliente pDato)
+        public bool Almacenar_Cliente(Cliente pDato)
         {
             return false;
         }
@@ -44,7 +46,7 @@ namespace Data
         /// <param name="pDato"></param>
         /// <returns></returns>
         /// Returna false si algo fallo en el proceso en caso contrario true.
-        public bool Almacenar(Funcionario pDato)
+        public bool Almacenar_Funcionario(Funcionario pDato)
         {
             return false;
         }
@@ -54,7 +56,7 @@ namespace Data
         /// </summary>
         /// <param name="pDato"></param>
         /// <returns></returns>
-        public bool Almacenar(Horario pDato)
+        public bool Almacenar_Horario(Horario pDato)
         {
             return false;
         }
@@ -64,18 +66,22 @@ namespace Data
         /// </summary>
         /// <param name="pDato"></param>
         /// <returns></returns>
-        public bool Almacenar(Servicio pDato)
+        public bool Almacenar_Servicio(Servicio pDato)
         {
             return false;
         }
 
         /// <summary>
-        /// Almacena los contratos // Contiene un arraylist de servicios con su respectivos id, un id de administrador,id cliente
+        /// Almacena los contratos // 
+        /// ***en la base de datos se debe hacer un split de los servicios id que vienen en ej: 1,2,3 -- Devuelve false si algun id no existe
+        /// ***en la base de datos de debe validar la identificacion del usuario -- devuelve false si no existe el usuario
         /// </summary>
         /// <param name="pDato"></param>
         /// <returns></returns>
-        public bool Almacenar(Contrato pDato)
+        public bool Almacenar_Contrato(Contrato pDato)
         {
+            Console.WriteLine(pDato.getId_Cliente + "-" + pDato.getId_Funcionario + "-" + pDato.getId_Servicios + "-" + pDato.getNombre_Beneficiado);
+            
             return false;
         }
 
@@ -85,11 +91,11 @@ namespace Data
         /// <param name="pDato"></param>
         /// <param name="pHorario"></param>
         /// <returns></returns>
-        public bool Almacenar(Contrato pDato, Horario pHorario)
+        public bool Almacenar_Contrato_Especial(Contrato pDato, Horario pHorario)
         {
             return false;
         }
-        */
+        
         #endregion
 
         private static Emisor_Data _Instancia;

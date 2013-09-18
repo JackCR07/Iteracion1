@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Funcionario 
+    public class Funcionario 
     {
         public Funcionario(String pNombre, int pIdentificacion, String pConstrasenia, String pTipo)
         {

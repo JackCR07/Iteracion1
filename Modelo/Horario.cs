@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace Modelo
 {
-    class Horario
+    public class Horario
     {
         public Horario(String pHora_Inicio, String pHora_Final, ArrayList pDias)
         {

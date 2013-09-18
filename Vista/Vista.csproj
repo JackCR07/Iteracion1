@@ -47,7 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IObservador.cs" />
+    <Compile Include="Accion_Denegada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accion_Denegada.Designer.cs">
+      <DependentUpon>Accion_Denegada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accion_Exitosa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accion_Exitosa.Designer.cs">
+      <DependentUpon>Accion_Exitosa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lista_Servicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lista_Servicios.Designer.cs">
+      <DependentUpon>Lista_Servicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +83,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Lista_Servicios.resx">
+      <DependentUpon>Lista_Servicios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

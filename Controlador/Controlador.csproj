@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Controlador.Program</StartupObject>
+    <StartupObject>Controlador.Login_Evento</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manejo_Eventos.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Login_Evento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +56,10 @@
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{d6caa790-3c33-49bf-ac81-9330eb9bf364}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{fe0eefb7-e24f-4913-8b09-8c7016cb4082}</Project>
+      <Name>Modelo</Name>
     </ProjectReference>
     <ProjectReference Include="..\Vista\Vista.csproj">
       <Project>{c6bfb88a-be46-42da-acdd-7f41e2d31769}</Project>

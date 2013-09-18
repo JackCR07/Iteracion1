@@ -7,36 +7,29 @@ using System.Collections;
 
 namespace Modelo
 {
-    class Contrato
+    public class Contrato
     {
-        public Contrato(int pIdentificacion, ArrayList pId_Servicios, int pId_Funcionarios, int pId_Cliente, String pNombre_Beneficiado, float pMontoTotal)
+        public Contrato(String pId_Servicios, String pId_Funcionarios, String pId_Cliente, String pNombre_Beneficiado)
         {
-            _Identificacion = pIdentificacion;
             _Id_Servicios = pId_Servicios;
             _Id_Funcionario = pId_Funcionarios;
             _Id_Cliente = pId_Cliente;
             _Nombre_Beneficiado = pNombre_Beneficiado;
-            _MontoTotal = pMontoTotal;
         }
 
         #region Propiedades
 
-        public int getIdentificacion
-        {
-            get { return _Identificacion; }
-        }
-
-        public ArrayList getId_Servicios
+        public String getId_Servicios
         {
             get { return _Id_Servicios; }
         }
 
-        public int getId_Funcionario
+        public String getId_Funcionario
         {
             get { return _Id_Funcionario; }
         }
 
-        public int getId_Cliente
+        public String getId_Cliente
         {
             get { return _Id_Cliente; }
         }
@@ -46,20 +39,14 @@ namespace Modelo
             get { return _Nombre_Beneficiado; }
         }
 
-        public float getMontoTotal
-        {
-            get { return _MontoTotal; }
-        }
 
         #endregion
 
         #region Atributos
-        private int _Identificacion;
-        private ArrayList _Id_Servicios;
-        private int _Id_Funcionario;
-        private int _Id_Cliente;
+        private String _Id_Servicios;    // hay que hacer un split  : 1,2,3
+        private String _Id_Funcionario;
+        private String _Id_Cliente;
         private String _Nombre_Beneficiado;
-        private float _MontoTotal;
         #endregion
     }
 }

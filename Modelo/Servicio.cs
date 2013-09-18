@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace Modelo
 {
-    class Servicio
+    public class Servicio
     {
         public Servicio(int pIdentificacion, String pNombre, String pDescripcion, int pMonto, int pId_Encargado, ArrayList pId_Horarios)
         {
