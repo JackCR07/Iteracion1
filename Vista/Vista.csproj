@@ -83,6 +83,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Accion_Denegada.resx">
+      <DependentUpon>Accion_Denegada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lista_Servicios.resx">
       <DependentUpon>Lista_Servicios.cs</DependentUpon>
     </EmbeddedResource>

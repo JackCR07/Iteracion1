@@ -1,1 +1,6 @@
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\QIA\bin\Debug\QIA.exe.config
+C:\Users\Jack\Documents\GitHub\Iteracion1\QIA\bin\Debug\QIA.exe.config
+C:\Users\Jack\Documents\GitHub\Iteracion1\QIA\bin\Debug\QIA.exe
+C:\Users\Jack\Documents\GitHub\Iteracion1\QIA\bin\Debug\QIA.pdb
+C:\Users\Jack\Documents\GitHub\Iteracion1\QIA\obj\Debug\QIA.exe
+C:\Users\Jack\Documents\GitHub\Iteracion1\QIA\obj\Debug\QIA.pdb

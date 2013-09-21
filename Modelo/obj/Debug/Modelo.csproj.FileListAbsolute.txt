@@ -4,3 +4,10 @@ C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iter
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Modelo\obj\Debug\Modelo.dll
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Modelo\obj\Debug\Modelo.pdb
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\Jack\Documents\GitHub\Iteracion1\Modelo\bin\Debug\Modelo.dll.config
+C:\Users\Jack\Documents\GitHub\Iteracion1\Modelo\bin\Debug\Modelo.dll
+C:\Users\Jack\Documents\GitHub\Iteracion1\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Jack\Documents\GitHub\Iteracion1\Modelo\obj\Debug\Modelo.dll
+C:\Users\Jack\Documents\GitHub\Iteracion1\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Jack\Documents\GitHub\Iteracion1\Modelo\bin\Debug\Modelo.dll.CodeAnalysisLog.xml
+C:\Users\Jack\Documents\GitHub\Iteracion1\Modelo\bin\Debug\Modelo.dll.lastcodeanalysissucceeded

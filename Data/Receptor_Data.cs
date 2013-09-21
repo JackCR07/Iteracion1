@@ -4,6 +4,8 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Data
 {
@@ -35,7 +37,27 @@ namespace Data
         /// devuelve el tipo de usuarios si existe, en caso que no encuentre el usuario devolvera "NULL"
         public String Es_Usuario(String pUsuario, String pContrasenia)
         {
-            return "ROOT"; 
+            Conector coneccion = new Conector();
+            String tipousuario = "";
+            bool conecto = coneccion.OpenConnection();
+            if (conecto)
+            {
+                bool res = false;
+                MySqlCommand cmd = new MySqlCommand("ValidarUsuario", coneccion.connection);
+                cmd.Parameters.Add(new MySqlParameter("nom", pUsuario));
+                cmd.Parameters.Add(new MySqlParameter("pass", pContrasenia));
+                cmd.Parameters.Add(new MySqlParameter("res", res));
+                cmd.Parameters.Add(new MySqlParameter("tipou", tipousuario));
+                cmd.Parameters[2].Direction = ParameterDirection.Output;
+                cmd.Parameters[3].Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                if (cmd.Parameters[2].Value.ToString()=="1") {
+                    tipousuario=cmd.Parameters[3].Value.ToString();
+                }
+            }
+
+            return tipousuario; 
             
         }
 
