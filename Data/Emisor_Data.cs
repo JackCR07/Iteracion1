@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Modelo;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace Data
 {
@@ -29,46 +31,94 @@ namespace Data
         #region Almacenamiento en BD
 
 
-
-        /// <summary>
-        /// Almacenamiento de los Clientes en la base de Datos
-        /// </summary>
-        /// <returns></returns>
-        /// Returna false si algo fallo en el proceso en caso contrario true.
-        public bool Almacenar_Cliente(Cliente pDato)
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// Almacenamiento de los Funcionarios
-        /// </summary>
-        /// <param name="pDato"></param>
-        /// <returns></returns>
-        /// Returna false si algo fallo en el proceso en caso contrario true.
-        public bool Almacenar_Funcionario(Funcionario pDato)
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// Almacena los horarios. // Contiene un arrayList en Los dias del horario
-        /// </summary>
-        /// <param name="pDato"></param>
-        /// <returns></returns>
-        public bool Almacenar_Horario(Horario pDato)
-        {
-            return false;
-        }
-
         /// <summary>
         /// Almacena un Servicio // Contiene un id de un funcionario y arraylist de los horarios
         /// </summary>
         /// <param name="pDato"></param>
         /// <returns></returns>
-        public bool Almacenar_Servicio(Servicio pDato)
+        public bool Almacenar_Servicio(Servicio pDato,Horario pHorario)
         {
-            return false;
+            Conector coneccion = new Conector();
+            float cost = float.Parse(pDato.getMonto);
+
+            bool conecto = coneccion.OpenConnection();
+            if (conecto)
+            {
+                MySqlCommand cmd = new MySqlCommand("almacenarservicio", coneccion.connection);
+                cmd.Parameters.Add(new MySqlParameter("nom", pDato.getNombre));
+                cmd.Parameters.Add(new MySqlParameter("cup", null));
+                cmd.Parameters.Add(new MySqlParameter("cost", cost));
+                cmd.Parameters.Add(new MySqlParameter("dia", pHorario.getDias));
+                cmd.Parameters.Add(new MySqlParameter("h1", pHorario.getHora_Inicio));
+                cmd.Parameters.Add(new MySqlParameter("h2", pHorario.getHora_Final));
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+            }
+            conecto = coneccion.CloseConnection();
+            return true;
+        }
+
+        /// <summary>
+        /// Dado un id de servicio caerle encima a sus datos con los del nuevo servicio, a excepcion del nombre del servicio
+        /// Si lo atributos vienen en vacio , no hacer UPDATE DE ESE ATRIBUTO
+        /// </summary>
+        /// <param name="pId_Servicio_A_Modificar"></param> Este dato tiene que ser validado, si no existe el id de servicio seleccionado , RETORNA FALSE
+        /// <param name="pNuevo_Servicio"></param>
+        /// <param name="pNuevo_Horario"></param>
+        /// <returns></returns>
+        public bool Modificar_Servicio(String pId_Servicio_A_Modificar, Servicio pNuevo_Servicio, Horario pNuevo_Horario)
+        {
+            Conector coneccion = new Conector();
+            float cost = float.Parse(pNuevo_Servicio.getMonto);
+            bool res = false;
+            bool conecto = coneccion.OpenConnection();
+            if (conecto)
+            {
+                MySqlCommand cmd = new MySqlCommand("modificarservicio", coneccion.connection);
+                cmd.Parameters.Add(new MySqlParameter("ids", pId_Servicio_A_Modificar));
+                cmd.Parameters.Add(new MySqlParameter("cup", null));
+                cmd.Parameters.Add(new MySqlParameter("cost", cost));
+                cmd.Parameters.Add(new MySqlParameter("dia", pNuevo_Horario.getDias));
+                cmd.Parameters.Add(new MySqlParameter("h1", pNuevo_Horario.getHora_Inicio));
+                cmd.Parameters.Add(new MySqlParameter("h2", pNuevo_Horario.getHora_Final));
+                cmd.Parameters.Add(new MySqlParameter("res", res));
+                cmd.Parameters[6].Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                if (cmd.Parameters[6].Value.ToString() == "1")
+                {
+                    res = true;
+                }
+            }
+            conecto = coneccion.CloseConnection();
+            return res;
+        }
+
+        /// <summary>
+        /// Dado un Id de servicio, eliminarlo de la base de datos
+        /// </summary>
+        /// <param name="pId_Servicio_A_Eliminar"></param> Validar que el id de servicio exista, de lo contrario devolver false
+        /// <returns></returns>
+        public bool Eliminar_Servicio(String pId_Servicio_A_Eliminar)
+        {
+            Conector coneccion = new Conector();
+            bool res = false;
+            bool conecto = coneccion.OpenConnection();
+            if (conecto)
+            {
+                MySqlCommand cmd = new MySqlCommand("eliminarservicio", coneccion.connection);
+                cmd.Parameters.Add(new MySqlParameter("ids", pId_Servicio_A_Eliminar));
+                cmd.Parameters.Add(new MySqlParameter("res", res));
+                cmd.Parameters[1].Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                if (cmd.Parameters[1].Value.ToString() == "1")
+                {
+                    res = true;
+                }
+            }
+            conecto = coneccion.CloseConnection();
+            return res;
         }
 
         /// <summary>
@@ -80,9 +130,82 @@ namespace Data
         /// <returns></returns>
         public bool Almacenar_Contrato(Contrato pDato)
         {
-            Console.WriteLine(pDato.getId_Cliente + "-" + pDato.getId_Funcionario + "-" + pDato.getId_Servicios + "-" + pDato.getNombre_Beneficiado);
-            
-            return false;
+            Conector coneccion = new Conector();
+            bool res = false;
+            bool conecto = coneccion.OpenConnection();
+            float costo = 0;
+            int idco = 0;
+            string[] idservicios = pDato.getId_Servicios.Split(',');
+            int n = idservicios.Length;
+            if (conecto)
+            {
+                MySqlCommand cmd;
+                int i = 0;
+                while (n > 0)
+                {
+                    cmd = new MySqlCommand("Costoservicio", coneccion.connection);
+                    cmd.Parameters.Add(new MySqlParameter("ids", idservicios[i]));
+                    cmd.Parameters.Add(new MySqlParameter("cost", costo));
+                    cmd.Parameters.Add(new MySqlParameter("res", res));
+                    cmd.Parameters[1].Direction = ParameterDirection.Output;
+                    cmd.Parameters[2].Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    if (cmd.Parameters[2].Value.ToString() == "1")
+                    {
+                        res = true;
+                        costo += float.Parse(cmd.Parameters[1].Value.ToString());
+                    }
+                    else
+                    {
+                        res = false;
+                        break;
+                    }
+
+                    i++;
+                    n--;
+                }
+                if (res != false)
+                {
+                    cmd = new MySqlCommand("NuevoContrato", coneccion.connection);
+                    cmd.Parameters.Add(new MySqlParameter("niño", pDato.getNombre_Beneficiado));
+                    cmd.Parameters.Add(new MySqlParameter("cost", costo));
+                    cmd.Parameters.Add(new MySqlParameter("funcionarioid", pDato.getId_Funcionario));
+                    cmd.Parameters.Add(new MySqlParameter("user", pDato.getId_Cliente));
+                    cmd.Parameters.Add(new MySqlParameter("res", res));
+                    cmd.Parameters.Add(new MySqlParameter("idc", idco));
+                    cmd.Parameters[4].Direction = ParameterDirection.Output;
+                    cmd.Parameters[5].Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    if (cmd.Parameters[4].Value.ToString() == "1")
+                    {
+                        res = true;
+                        idco = int.Parse(cmd.Parameters[5].Value.ToString());
+                    }
+                    else
+                        res = false;
+
+                }
+                if (res != false)
+                {
+                    i = 0;
+                    n = idservicios.Length;
+                    while (n > 0)
+                    {
+                        cmd = new MySqlCommand("enlazarcontratohorario", coneccion.connection);
+                        cmd.Parameters.Add(new MySqlParameter("idc", idco));
+                        cmd.Parameters.Add(new MySqlParameter("ids", idservicios[i]));
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.ExecuteNonQuery();
+                        i++;
+                        n--;
+                    }
+                }
+            }
+
+            Console.WriteLine(costo);
+            return res;
         }
 
         /// <summary>

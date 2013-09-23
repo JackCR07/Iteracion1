@@ -68,10 +68,13 @@ namespace Controlador
 
         private void Correr_Menu(Object pEs_Root)
         {
-            _Menu_Princiapal = new Menu_Principal((bool)pEs_Root);
+            _Menu_Princiapal = new Menu_Principal((bool)pEs_Root,Receptor_Data.getInstance.getLista_Funcionarios_Maestros());
             _Menu_Princiapal.Abrir_Lista_Servicios += Abrir_Lista_Servicios;
             _Menu_Princiapal.Abrir_Generar_Contrato += Generar_Contrato;
             _Menu_Princiapal.Volver_Login += Volver_Ventana_Login;
+            _Menu_Princiapal.Almacenar_Servicio += Almacenar_Servicio;
+            _Menu_Princiapal.Modificar_Servi += Modificar_Servicio;
+            _Menu_Princiapal.Ev_Eliminar_Servicio += Eliminar_Servicio;
             Application.Run(_Menu_Princiapal);
         }
 
@@ -99,7 +102,6 @@ namespace Controlador
         //================================== Regresar a la ventana de login
         private void Volver_Ventana_Login(Object sender, EventArgs e)
         {
-            Console.WriteLine("MAE MAE MAE");
 
             _Menu_Princiapal.Dispose();
             _Abrir_Login = true;
@@ -111,6 +113,53 @@ namespace Controlador
             _Login_View.Show();
         }
 
+        private void Almacenar_Servicio(Object sender, EventArgs e)
+        {
+            Menu_Principal _Valores = (Menu_Principal)sender;
+            Servicio _Nuevo_Servicio = new Servicio(_Valores.Get_Seleccion_Servicio, _Valores.Get_Descripcion, _Valores.Get_Costo, _Valores.Get_Encargado);
+            Horario _Nuevo_Horario = new Horario(_Valores.Get_Hora_Inicio, _Valores.Get_Hora_Final, _Valores.Get_Dias);
+            if (Emisor_Data.getInstance.Almacenar_Servicio(_Nuevo_Servicio,_Nuevo_Horario))
+            {
+                Thread Hilo_Generar_Contrato = new Thread(Ventana_Exito);
+                Hilo_Generar_Contrato.Start();
+            }
+            else
+            {
+                Thread Hilo_Generar_Contrato = new Thread(Ventana_Denegada);
+                Hilo_Generar_Contrato.Start();
+            }
+        }
+
+        private void Modificar_Servicio(Object sender, EventArgs e)
+        {
+            Menu_Principal _Valores = (Menu_Principal)sender;
+            Servicio _Mod_Servicio = new Servicio("", _Valores.Get_Descripcion, _Valores.Get_Costo, _Valores.Get_Encargado);
+            Horario _Mod_Horario = new Horario(_Valores.Get_Hora_Inicio, _Valores.Get_Hora_Final, _Valores.Get_Dias);
+            if (Emisor_Data.getInstance.Modificar_Servicio(_Valores.Get_Id_Servicio,_Mod_Servicio, _Mod_Horario))
+            {
+                Thread Hilo_Generar_Contrato = new Thread(Ventana_Exito);
+                Hilo_Generar_Contrato.Start();
+            }
+            else
+            {
+                Thread Hilo_Generar_Contrato = new Thread(Ventana_Denegada);
+                Hilo_Generar_Contrato.Start();
+            }
+        }
+
+        private void Eliminar_Servicio(Object sender, EventArgs e)
+        {
+            if (Emisor_Data.getInstance.Eliminar_Servicio((string)sender))
+            {
+                Thread Hilo_Generar_Contrato = new Thread(Ventana_Exito);
+                Hilo_Generar_Contrato.Start();
+            }
+            else
+            {
+                Thread Hilo_Generar_Contrato = new Thread(Ventana_Denegada);
+                Hilo_Generar_Contrato.Start();
+            }
+        }
         // =================================================================
 
         #region Llamados a Ventanas

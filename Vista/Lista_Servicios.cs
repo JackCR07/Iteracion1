@@ -18,5 +18,10 @@ namespace Vista
             InitializeComponent();
             txt_servicios.AppendText(pLista_Servicios);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

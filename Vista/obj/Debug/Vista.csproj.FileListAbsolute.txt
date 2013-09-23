@@ -1,20 +1,28 @@
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\bin\Debug\Vista.dll.config
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\bin\Debug\Vista.dll
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\bin\Debug\Vista.pdb
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Eliminar_Servicio.resources
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Lista_Servicios.resources
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Login.resources
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Menu_Principal.resources
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Properties.Resources.resources
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.csproj.GenerateResource.Cache
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.dll
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.pdb
-C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Menu_Principal.resources
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.csprojResolveAssemblyReference.cache
-C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Lista_Servicios.resources
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Accion_Denegada.resources
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Vista\obj\Debug\Vista.Accion_Exitosa.resources
 C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\bin\Debug\Vista.dll.config
 C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\bin\Debug\Vista.dll
 C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\bin\Debug\Vista.pdb
+C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.csprojResolveAssemblyReference.cache
+C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.Accion_Denegada.resources
+C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.Accion_Exitosa.resources
+C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.Eliminar_Servicio.resources
 C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.Lista_Servicios.resources
 C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.Login.resources
 C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.Menu_Principal.resources
+C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.Properties.Resources.resources
 C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.csproj.GenerateResource.Cache
 C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.dll
 C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.pdb
-C:\Users\Jack\Documents\GitHub\Iteracion1\Vista\obj\Debug\Vista.Accion_Denegada.resources

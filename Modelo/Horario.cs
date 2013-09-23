@@ -9,7 +9,7 @@ namespace Modelo
 {
     public class Horario
     {
-        public Horario(String pHora_Inicio, String pHora_Final, ArrayList pDias)
+        public Horario(String pHora_Inicio, String pHora_Final, String pDias)
         {
             _Hora_Inicio = pHora_Inicio;
             _Hora_Final = pHora_Final;
@@ -25,7 +25,7 @@ namespace Modelo
         {
             get { return _Hora_Final; }
         }
-        public ArrayList getDias
+        public String getDias
         {
             get { return _Dias; }
         }
@@ -34,6 +34,6 @@ namespace Modelo
 
         private String _Hora_Inicio;
         private String _Hora_Final;
-        private ArrayList _Dias;
+        private String _Dias;
     }
 }

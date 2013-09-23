@@ -1,15 +1,15 @@
-C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Data\bin\Debug\Data.dll
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Data\bin\Debug\Data.pdb
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Data\bin\Debug\Modelo.dll
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Data\bin\Debug\Modelo.pdb
+C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Data\obj\Debug\Data.dll
 C:\Users\Fabian\Desktop\Progra\Requerimientos del Software\proyecto\Primera Iteracion\QIA\Data\obj\Debug\Data.pdb
 C:\Users\Jack\Documents\GitHub\Iteracion1\Data\bin\Debug\Data.dll
 C:\Users\Jack\Documents\GitHub\Iteracion1\Data\bin\Debug\Data.pdb
 C:\Users\Jack\Documents\GitHub\Iteracion1\Data\bin\Debug\Modelo.dll
+C:\Users\Jack\Documents\GitHub\Iteracion1\Data\bin\Debug\MySql.Data.dll
 C:\Users\Jack\Documents\GitHub\Iteracion1\Data\bin\Debug\Modelo.pdb
 C:\Users\Jack\Documents\GitHub\Iteracion1\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\Jack\Documents\GitHub\Iteracion1\Data\obj\Debug\Data.dll
 C:\Users\Jack\Documents\GitHub\Iteracion1\Data\obj\Debug\Data.pdb
-C:\Users\Jack\Documents\GitHub\Iteracion1\Data\bin\Debug\MySql.Data.dll

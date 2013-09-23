@@ -52,11 +52,12 @@ namespace Data
                 cmd.Parameters[3].Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
-                if (cmd.Parameters[2].Value.ToString()=="1") {
-                    tipousuario=cmd.Parameters[3].Value.ToString();
+                if (cmd.Parameters[2].Value.ToString() == "1")
+                {
+                    tipousuario = cmd.Parameters[3].Value.ToString();
                 }
             }
-
+            conecto = coneccion.CloseConnection();
             return tipousuario; 
             
         }
@@ -70,9 +71,48 @@ namespace Data
         /// RETORNA un  STRING CON su RESPECTIVO ID, para hacer el calculo de costo,,, separa con enter por cada columna
         public String getLista_Servicios()
         {
-            return  "8. Natacion L-M 13:00-!4:00 Carlos_Montana\n 12. Fut L-M 13:00-!4:00 Raul_Montana" ;
+            Conector coneccion = new Conector();
+            String servicios = "";
+            bool conecto = coneccion.OpenConnection();
+            if (conecto)
+            {
+                MySqlCommand cmd = new MySqlCommand("listaservicios", coneccion.connection);
+                cmd.Parameters.Add(new MySqlParameter("lista", servicios));
+                cmd.Parameters[0].Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                servicios = cmd.Parameters[0].Value.ToString();
+            }
+            conecto = coneccion.CloseConnection();
+            return servicios;
         }
 
+        /// <summary>
+        /// Devuevle una lista de todos los nombres de los funcionario de tipo maestro en un array de String[]
+        /// </summary>
+        /// <returns></returns>
+        public String[] getLista_Funcionarios_Maestros()
+        {
+            Conector coneccion = new Conector();
+            String[] funcionarios=null;
+            bool conecto = coneccion.OpenConnection();
+            if (conecto)
+            {
+                MySqlCommand cmd = new MySqlCommand("listaroot", coneccion.connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader dr=cmd.ExecuteReader();
+                funcionarios = new string[(dr.FieldCount+1)];
+                int i = 0;
+                while (dr.Read())
+                {
+                    funcionarios[i] = dr[0].ToString();
+                    i++;
+                }
+                dr.Close();
+            }
+            conecto = coneccion.CloseConnection();
+            return funcionarios;
+        }
 
 
         private static Receptor_Data _Instancia;
